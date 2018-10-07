@@ -43,5 +43,28 @@ class CServerFeature_test extends FeatureTest {
   }
 
 
+  test("CServer CPost POST") {
+    server.httpPost(
+      path = "/cpost",
+      postBody =
+        """
+          |{
+          |"time": "2018-02-01T12:23:12",
+          |"account": "FI123",
+          |"other_party_account": "FI567",
+          |"other_party_name": "kulta ja romu"
+          |}
+        """.stripMargin,
+      andExpect = Ok,
+      withBody =
+        """{"time":"2018-02-01T12:23:12",
+          |"account":"FI123",
+          |"other_party_account":"FI567",
+          |"other_party_name":"kulta ja romu",
+          |"category":"override"}""".stripMargin.replaceAll("\\n", "")
+    )
+  }
+
+
 }
 

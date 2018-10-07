@@ -7,6 +7,7 @@ import com.twitter.finatra.http.filters.CommonFilters
 import com.twitter.finatra.http.routing.HttpRouter
 import filters._
 import controllers._
+import modules._
 
 object CServerMain extends CServer
 
@@ -14,6 +15,10 @@ class CServer extends HttpServer {
 
   override protected def defaultHttpPort: String = ":8080" // I'm used to this...
   override protected def defaultHttpServerName: String = "Gavert CServer Finatra test"
+
+  override val modules = Seq(
+    personalOverrideServiceModule
+  )
 
   override def configureHttp(router: HttpRouter): Unit = {
     router
@@ -25,5 +30,6 @@ class CServer extends HttpServer {
       .add[PingController]
       .add[CSimpleGet]
       .add[CSinglePost]
+      .add[CPost]
   }
 }

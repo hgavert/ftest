@@ -11,6 +11,7 @@ lazy val scalaVersions = Seq(
 
 lazy val versions = new Object {
   val finatra = "18.9.1"
+  val finagle = "18.9.1"
   val twitterUtils = "18.9.1"
   val guice = "4.0"
   val scalaCheck = "1.14.0"
@@ -38,11 +39,14 @@ lazy val finatraDependencies = Seq(
   "org.mockito" % "mockito-core" % "1.9.5" % "test"
 )
 
-
 /*
 "com.twitter" %% "finatra-jackson" % versions.finatra % "test",
 "com.twitter" %% "finatra-jackson" % versions.finatra % "test" classifier "tests"
 */
+
+lazy val databaseDependencies = Seq(
+  "com.twitter" %% "finagle-redis" % versions.finagle
+)
 
 lazy val commonBuildLibs = Seq(
   "com.twitter"    %% "util-collection" % versions.twitterUtils
@@ -62,6 +66,7 @@ lazy val root = (project in file("."))
   .settings(scalaVersions: _*)
   .settings(resolvers ++= commonResolvers)
   .settings(libraryDependencies ++= finatraDependencies)
+  .settings(libraryDependencies ++= databaseDependencies)
   .settings(libraryDependencies ++= commonBuildLibs)
   .settings(libraryDependencies ++= commonTestLibs)
   .settings(scalacOptions ++= Seq("-target:jvm-1.8", "-feature", "-deprecation"))
