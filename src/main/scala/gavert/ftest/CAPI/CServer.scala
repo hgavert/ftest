@@ -8,9 +8,9 @@ import com.twitter.finatra.http.routing.HttpRouter
 import filters._
 import controllers._
 
-object CategorizationServerMain extends CategorizationServer
+object CServerMain extends CServer
 
-class CategorizationServer extends HttpServer {
+class CServer extends HttpServer {
   override def configureHttp(router: HttpRouter): Unit = {
     router
       // Filters are in order and they are composed after the routes

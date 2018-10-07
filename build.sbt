@@ -74,7 +74,7 @@ val finatraTestLibs = Seq(
 */
 
 // set the main class for 'sbt run'
-mainClass in (Compile,run) := Some("gavert.CAPI.CategorizationServerMain")
+mainClass in (Compile,run) := Some("gavert.ftest.CAPI.CServerMain")
 
 
 lazy val root = (project in file("."))
