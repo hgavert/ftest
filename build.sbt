@@ -5,7 +5,7 @@ lazy val packageInfo = Seq(
 )
 
 lazy val scalaVersions = Seq(
-  scalaVersion := "2.12.6" //"2.12.7"
+  scalaVersion := "2.12.6"
 )
 
 
@@ -14,13 +14,12 @@ lazy val versions = new Object {
   val twitterUtils = "18.9.1"
   val guice = "4.0"
   val scalaCheck = "1.14.0"
-  val scalaTest = "3.0.5" // "2.2.6" //3.0.5
+  val scalaTest = "3.0.5"
 }
 
 lazy val commonResolvers = Seq(
   Resolver.sonatypeRepo("releases"),
-  "Twitter Maven" at "https://maven.twttr.com"//,
-  //"Finatra Repo" at "http://twitter.github.com/finatra"
+  "Twitter Maven" at "https://maven.twttr.com"
 )
 
 lazy val finatraDependencies = Seq(
@@ -46,7 +45,7 @@ lazy val finatraDependencies = Seq(
 */
 
 lazy val commonBuildLibs = Seq(
-  "com.twitter"    %% "util-collection" % versions.twitterUtils // ei kyl olekaan vielä käytössä
+  "com.twitter"    %% "util-collection" % versions.twitterUtils
 )
 lazy val commonTestLibs = Seq(
   "org.scalacheck" %% "scalacheck"      % versions.scalaCheck,
