@@ -25,10 +25,31 @@ lazy val commonResolvers = Seq(
 )
 
 lazy val finatraDependencies = Seq(
-  "com.twitter"    %% "finatra-http"    % versions.finatra,
+  "com.twitter" %% "finatra-http" % versions.finatra,
+  "com.twitter" %% "finatra-http" % versions.finatra % "test",
   "com.twitter" %% "finatra-http" % versions.finatra % "test" classifier "tests",
-  "com.twitter" %% "inject-server" % versions.finatra % "test" classifier "tests"
+  "com.twitter" %% "inject-server" % versions.finatra % "test",
+  "com.twitter" %% "inject-server" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-core" % versions.finatra % "test",
+  "com.twitter" %% "inject-core" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-app" % versions.finatra % "test",
+  "com.twitter" %% "inject-app" % versions.finatra % "test" classifier "tests",
+  "com.twitter" %% "inject-modules" % versions.finatra % "test",
+  "com.twitter" %% "inject-modules" % versions.finatra % "test" classifier "tests",
+  "com.google.inject.extensions" % "guice-testlib" % versions.guice % "test",
+  "org.mockito" % "mockito-core" % "1.9.5" % "test"
 )
+
+
+/*
+
+
+"com.twitter" %% "finatra-jackson" % versions.finatra % "test",
+
+"com.twitter" %% "finatra-http" % versions.finatra % "test" classifier "tests",
+"com.twitter" %% "finatra-jackson" % versions.finatra % "test" classifier "tests",
+"com.twitter" %% "inject-server" % versions.finatra % "test" classifier "tests",
+*/
 
 lazy val commonBuildLibs = Seq(
   //"com.twitter"    %% "finatra-http"    % versions.finatra,
