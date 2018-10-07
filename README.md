@@ -1,3 +1,2 @@
-# ftest
-Just s test of a http server
-
+Just a Hello World test server based on Finatra
+(Well, trying to get the dependencies... you know...)
